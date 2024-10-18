@@ -1,52 +1,93 @@
 # Outbuild Backend Assesment
 
-## Objective
+  
 
-In order to work in Outbuild, you need to develop scalable and secure APIs by using (but not limited to) Express and PostgreSQL, and handling large datasets in a efficient way. It's required to demostrate a good understanding of key backend principles, like application of software principles, TDD, error handling, logging and security and architecture design.
+## Overview
 
-## Problem
+  
 
-Outbuild uses schedules as the principal entity for our users, an user has multiple schedules and one schedule is related to only one user, a schedule has multiple activities (some schedules has thousands of them) and one activity is related to only one schedule. We need you to develop a backend system that implements this domain entities and let us work with them in a efficient way. A schedule has a unique name and a image url representing the building, in the other hand, an activity has a name, a start date and an end date. Is up to you decide wheter the storage system, the API details, pagination, etc... if you pass to the next step in the hiring process, you could be asked why you take those decisions. In the next section, we'll give you the base requirements, in order to evaluate what decisions you take while the developing of this assesment.
+To join our team at Outbuild, you should be capable of developing scalable and secure APIs. During development, we primarily use **Express and PostgreSQL** (though our projects sometimes extend beyond this stack).
+
+A key part of your role will involve efficiently managing **large datasets**.
+
+The objective of this test is to assess your understanding of **essential backend principles**, including but not limited to software design principles, test-driven development, error handling, logging, security, and architectural design.
+
+  
+
+## Problem statement
+
+  
+ At Outbuild,  construction **schedules** are the core entity for our **users**. For this test, assume that each user can access multiple schedules, with each schedule associated with a single user. A schedule can contain many **activities**—some may have thousands—and each activity is associated with a single schedule. 
+
+Each schedule has a name and an URL of an image with the construction objective (e.g., a building). Each activity has a name, a start date, and an end date.
+
+Your task is to develop a backend system that effectively implements these domain entities. You have the autonomy to decide on the storage system, API details, pagination, and other architectural choices. If you progress to the next stage of the hiring process, you may be asked to **explain your decisions**.
+
+The following section outlines the base requirements for the system implementation.
+  
 
 ## Requirements
 
-* **API Requirements**:
-  The API needs to comply with at least, this endpoints:
+  
 
-  1. Creates an empty schedule (with no activities) in the system 
-  2. Returns a schedule with their activities 
-  3. Adds an activity to a schedule
-  4. Adds multiple activities to a schedule
+###  API Requirements:
 
-* **API Documentation**
-  Document the implemented endpoints
+The API must include **at least** the following endpoints:
 
-* **Security**
-  Implement a security measure that prevent non-authorized users access to schedules that don't belong to them. Also, don't expose database entities, make usage of DTOs
+1.  Create an empty schedule (with no activities) in the system.
+2.  Retrieve a schedule along with its activities.
+3.  Add an activity to a schedule.
+4.  Add multiple activities to a schedule.
 
-* **Error Handling**
-  Implement some method to handle most of the errors that can be on the system
+ > ��**Note** :  Your API should be documented, and you are free to choose the format and any tools you deem appropriate for this.
 
-* **Observability**
-  Implement logs for each transaction in the system
 
-* **Testing**
-  Implement tests for the 4 usecases
+
+###  Security and Performance Requirements:
+Your implementation should include a mechanism to prevent users from accessing schedules that do not belong to them. Use techniques that enhance security and speed, such as avoiding the exposure of database entities during data transfers and optimizing the number of requests.
+
+###  Error handling:
+Your implementation should include a mechanism to effectively catch and handle most errors. 
+
+###  Observability:
+Your implementation should include a mechanism to log the system transactions.
+  
+###  Tests:
+Your implementation should include any necessary tests that you deem appropriate.
+
+
+  
 
 ## Deliverables:
 
-A repository containing the source code of your project, instructions on how to run tests and run the project, Dockerfile and docker-compose if necessary, and everything that we need in order to run your project. Also, each decision that you think is relevant, or asumptions regarding the problem, must be described in the README.md file.
+ An expected deliverable is a repository containing the source code of your project, along with instructions on how to run tests and start the project. 
+
+  >  �� **Important**: Ensure that we can run your implementation on our machines. Please provide any necessary configurations to run your project (e.g., Dockerfile, etc.). Additionally, describe **any relevant decisions  regarding the problem or code structure** in the README file.
+
 
 ## Technology Stack
-* Express
-* NodeJS
-* PostgreSQL (you can use neon.tech or related DBaaS, local implementations of the database requires a Dockerfile for us in order to run the project)
-* Anything that you consider necessary for the system
+
+-   Express
+    
+-   Node.js
+    
+-   PostgreSQL (you may use neon.tech or a similar DBaaS)
+    
+-   Any additional tools or libraries you deem necessary for the system
+
 
 ## Evaluation Criteria:
-* Correctness: Does the API behave as expected ?
-* Testing: Are there sufficient and effective tests for each feature?
-* Performance: Is the API performant, especially when handling large datasets?
-* Security: Are there measures in place to secure the API?
-* Scalability: Is the API structured in a way that can handle future growth and data load?
-* Code Quality: Is the codebase well-architected, clean, modular, and maintainable following best practices and software principles?
+
+This section contains a list of basic questions that will be part of our evaluation criteria. These may help guide you during the development process:
+
+-   **✅ Correctness:** Does the API behave as expected?
+    
+-   **��Testing:** Are there sufficient and effective tests for each feature?
+    
+-   **⚡Performance:** Is the API performant, especially when handling large datasets?
+    
+-   **��️ Security:** Are there measures in place to secure the API?
+    
+-   **�� Scalability:** Is the API structured to accommodate future growth and increased data load?
+    
+-   **�� Code Quality:** Is the codebase well-architected, clean, modular, and maintainable, following best practices and software principles?
